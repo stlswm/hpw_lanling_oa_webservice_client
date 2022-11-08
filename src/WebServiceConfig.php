@@ -4,6 +4,10 @@ namespace stlswm\HpwLanlingOaWebServiceClient;
 
 use stlswm\HpwLanlingOaWebServiceClient\WebService\WebServiceClient;
 
+/**
+ * Class WebServiceConfig
+ * @package stlswm\HpwLanlingOaWebServiceClient
+ */
 class WebServiceConfig
 {
     public string           $address;// Web服务的URL

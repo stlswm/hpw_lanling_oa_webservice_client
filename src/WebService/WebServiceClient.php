@@ -1,5 +1,12 @@
 <?php
+
 namespace stlswm\HpwLanlingOaWebServiceClient\WebService;
-interface WebServiceClient{
+
+/**
+ * Interface WebServiceClient
+ * @package stlswm\HpwLanlingOaWebServiceClient\WebService
+ */
+interface WebServiceClient
+{
 
 }
