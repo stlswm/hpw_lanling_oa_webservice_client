@@ -12,8 +12,8 @@ class KmReviewWebserviceServiceTest extends TestCase
     {
         $config = new WebServiceConfig(Address, ServiceBean, User, Password, ServiceClass);
         $action = ServiceBean;
-        $client = new KmReviewWebserviceService($config);
-        $a = $client->$action();
+        $service = new KmReviewWebserviceService($config);
+        $a = $service->client->$action();
         var_dump($a);
         die;
     }

@@ -13,8 +13,8 @@ use stlswm\HpwLanlingOaWebServiceClient\WebServiceConfig;
  */
 class KmReviewWebserviceService implements WebServiceClient
 {
-    protected static                  $client = null;
-    protected static WebServiceConfig $config;
+    public     $client = null;
+    protected  WebServiceConfig $config;
 
     /**
      * KmReviewWebserviceService constructor.
@@ -23,24 +23,21 @@ class KmReviewWebserviceService implements WebServiceClient
      */
     public function __construct(WebServiceConfig $config)
     {
-        self::$config = $config;
-        if (empty(self::$client)) {
-            self::init();
-        }
-        return self::$client;
+        $this->config = $config;
+        $this->init();
     }
 
     /**
      * @throws SoapFault
      */
-    private static function init()
+    public function init()
     {
-        $client = new SoapClient(null, ['uri' => self::$config->address, 'location' => self::$config->serviceClass]);
+        $this->client = new SoapClient($this->config->address);
         $userVar = [
-            'tns:user'     => self::$config->user,
-            'tns:password' => self::$config->password,
+            'tns:user'     => $this->config->user,
+            'tns:password' => $this->config->password,
         ];
         $header = new SoapHeader("http://sys.webservice.client", 'tns:RequestSOAPHeader', $userVar);
-        self::$client = $client->__setSoapHeaders([$header]);
+        $this->client->__setSoapHeaders([$header]);
     }
 }
