@@ -1,0 +1,26 @@
+{
+  "name": "stlswm/hpw-lanling-oa-webservice-client",
+  "description": "Lanling OA Web Service Client",
+  "keywords": [
+    "stlswm",
+    "lanling oa"
+  ],
+  "authors": [
+    {
+      "name": "stlswm ",
+      "email": "691207572@qq.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "stlswm\\HpwLanlingOaWebServiceClient\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.2"
+  }
+}
