@@ -1,5 +1,8 @@
 <?php
+
 namespace stlswm\HpwLanlingOaWebServiceClient\WebService;
-class KmReviewWebserviceService implements WebServiceClient{
+
+class KmReviewWebserviceService implements WebServiceClient
+{
 
 }
