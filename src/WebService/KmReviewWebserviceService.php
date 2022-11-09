@@ -13,8 +13,8 @@ use stlswm\HpwLanlingOaWebServiceClient\WebServiceConfig;
  */
 class KmReviewWebserviceService implements WebServiceClient
 {
-    public     $client = null;
-    protected  WebServiceConfig $config;
+    public SoapClient          $client;
+    protected WebServiceConfig $config;
 
     /**
      * KmReviewWebserviceService constructor.
@@ -34,10 +34,10 @@ class KmReviewWebserviceService implements WebServiceClient
     {
         $this->client = new SoapClient($this->config->address);
         $userVar = [
-            'tns:user'     => $this->config->user,
-            'tns:password' => $this->config->password,
+            'user'     => $this->config->user,
+            'password' => $this->config->password,
         ];
-        $header = new SoapHeader("http://sys.webservice.client", 'tns:RequestSOAPHeader', $userVar);
+        $header = new SoapHeader("http://sys.webservice.client", 'RequestSOAPHeader', $userVar);
         $this->client->__setSoapHeaders([$header]);
     }
 }
