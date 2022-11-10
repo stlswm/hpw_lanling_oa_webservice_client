@@ -33,11 +33,11 @@ class KmReviewWebserviceService implements WebServiceClient
     public function init()
     {
         $this->client = new SoapClient($this->config->address);
-        $userVar = [
+        $auth = [
             'user'     => $this->config->user,
             'password' => $this->config->password,
         ];
-        $header = new SoapHeader("http://sys.webservice.client", 'RequestSOAPHeader', $userVar);
+        $header = new SoapHeader("http://sys.webservice.client", 'RequestSOAPHeader', $auth);
         $this->client->__setSoapHeaders([$header]);
     }
 }
